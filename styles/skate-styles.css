@@ -1,0 +1,48 @@
+.logo {
+    font-size: 1.5em;
+   font-style: italic;
+   text-align: center;
+   color: rgb(226, 43, 43);
+}
+.main-class {
+text-align: center;
+
+
+
+}
+.details-container {
+   
+    
+    
+}
+.details-image {
+text-align: center;
+width: 400px;
+
+
+}
+.details-title {
+ font-size: 1.2em;
+ display: block;
+ text-align: center;
+}
+.thumbnails-list {
+    list-style: none;
+    padding: 0;
+}
+.thumbnails-item {
+
+}
+.thumbnails-image {
+ width: 100px;
+ text-align: center;
+ 
+}
+.thumbnails-title {
+ display: block;
+ font-style:oblique;
+ color: darkgreen;
+}
+.thumbnails-anchor {
+ 
+}
