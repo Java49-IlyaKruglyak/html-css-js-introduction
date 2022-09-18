@@ -1,12 +1,14 @@
 .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
    font-style: italic;
+   font-weight: bold;
    text-align: center;
-   color: rgb(226, 43, 43);
+   color: rgb(145, 51, 120);
+   background-color: rgb(202, 211, 217);
 }
 .main-class {
 text-align: center;
-
+background-color: rgb(202, 211, 217);
 
 
 }
@@ -18,11 +20,12 @@ text-align: center;
 .details-image {
 text-align: center;
 width: 400px;
+margin: 40px;
 
 
 }
 .details-title {
- font-size: 1.2em;
+ font-size: 1.5em;
  display: block;
  text-align: center;
 }
@@ -39,6 +42,7 @@ width: 400px;
  
 }
 .thumbnails-title {
+ font-size: 1.2em;
  display: block;
  font-style:oblique;
  color: darkgreen;
