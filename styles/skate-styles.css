@@ -1,52 +1,84 @@
-.logo {
-    font-size: 1.8em;
-   font-style: italic;
-   font-weight: bold;
-   text-align: center;
-   color: rgb(145, 51, 120);
-   background-color: rgb(202, 211, 217);
-}
-.main-class {
-text-align: center;
-background-color: rgb(202, 211, 217);
-
-
-}
-.details-container {
-   
+body {
+    display: flex; 
+    flex-direction: column;
+    background-color: rgb(211, 214, 214);
+ 
     
-    
-}
-.details-image {
-text-align: center;
-width: 400px;
-margin: 40px;
-
-
-}
-.details-title {
+ }
+ .logo  {
+ font-size: 2em;
+ background-color: rgb(129, 189, 216);
+ display: block;
+ text-align: center;
+ font-style: italic;
+ color: aliceblue;
+ 
+ }
+ .main-class {
+ 
+ }
+ .details-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 2.5vh;
+ 
+ }
+ .details-image {
+     width: 70vw;
+     height: 60vw;
+     border-radius: 25%;
+     margin-bottom: 2.5vh;
+ }
+ .details-title {
+ display: block;
+ font-style: oblique;
  font-size: 1.5em;
- display: block;
- text-align: center;
-}
-.thumbnails-list {
-    list-style: none;
+ 
+ }
+ .thumbnails-list {
+ list-style: none;
+ display:flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ max-height: 25vh;
+ overflow-y: auto;
+ justify-content: space-around;
+ padding-left: 0;
+ 
+ 
+ 
+ }
+ .thumbnails-item {
+    overflow: hidden;
+    width: 20vw;
+    height: 20vw;
+    margin-top: 2.5vh;
+    border: solid 3px rgb(8, 8, 8);
     padding: 0;
-}
-.thumbnails-item {
-
-}
-.thumbnails-image {
- width: 100px;
- text-align: center;
+    border-radius: 25%;
+    
+    
+ }
+ .thumbnails-image {
+     width: 20vw;
+     height: 15vw;
+     padding: 0;
+     display: block;
+     
+     
+ }
+ .thumbnails-title {
+     display: block; 
+     text-align: center;
+     height: 5vw;
+     background-color: rgb(129, 189, 216);
+     
+     
+ }
+ .thumbnails-anchor {
+    text-decoration: none;
+    color: rgb(18, 17, 18);
+   
+ }
  
-}
-.thumbnails-title {
- font-size: 1.2em;
- display: block;
- font-style:oblique;
- color: darkgreen;
-}
-.thumbnails-anchor {
- 
-}
