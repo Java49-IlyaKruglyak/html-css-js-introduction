@@ -20,15 +20,15 @@
 
 body,html {
     height: 100%;
-    background-image: url(images/LW001.jpg);
+    
 }
 
 body {
     display: flex;
     flex-direction: column;
-    background-color: rgb(249, 249, 244);
     margin: 0;
-    overflow: hidden;
+    background-image: url(images/LW001.jpg); /* why this not working?*/
+    background-color: rgb(249, 249, 244);
     
     
 
