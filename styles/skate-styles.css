@@ -59,6 +59,9 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10vh;
+    
+}
+.details-frame {
     position: relative;
 
 }
