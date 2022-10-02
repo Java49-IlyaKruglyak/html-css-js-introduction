@@ -2,10 +2,12 @@
     font-family: bungee;
     src: url(fonts/BungeeSpice-Regular.ttf);
 }
+
 @font-face {
     font-family: lakeshor;
     src: url(fonts/LAKESHOR-webfont.ttf);
 }
+
 @font-face {
     font-family: airstream;
     src: url(fonts/Airstream-webfont.ttf);
@@ -18,19 +20,21 @@
     --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33)
 }
 
-body,html {
+body,
+html {
     height: 100%;
-    
+
 }
 
 body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-image: url(images/LW001.jpg); /* why this not working?*/
+    background-image: url(images/LW001.jpg);
+    /* why this not working?*/
     background-color: rgb(249, 249, 244);
-    
-    
+
+
 
 }
 
@@ -42,7 +46,7 @@ body {
     font-style: italic;
     font-family: bungee;
     letter-spacing: 3px;
-    
+
 
 }
 
@@ -51,7 +55,7 @@ body {
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
-    
+
 }
 
 .details-container {
@@ -59,8 +63,9 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10vh;
-    
+
 }
+
 .details-frame {
     position: relative;
 
@@ -72,7 +77,7 @@ body {
     border-radius: 25%;
     margin-top: 5vw;
     border: solid 1px rgb(15, 15, 14);
-    box-shadow:  7px 4px 4px 2px rgb(138, 135, 133);
+    box-shadow: 7px 4px 4px 2px rgb(138, 135, 133);
 }
 
 .details-title {
@@ -85,7 +90,7 @@ body {
     position: absolute;
     left: 2vw;
     bottom: 3vw;
-    
+
 
 }
 
@@ -98,9 +103,9 @@ body {
     overflow-y: auto;
     justify-content: space-around;
     padding-left: 0;
-    
+
     margin-right: 3vw;
-    
+
 
 }
 
@@ -111,9 +116,9 @@ body {
     border: solid 1px rgb(15, 15, 14);
     border-radius: 25%;
     overflow: hidden;
-    box-shadow:  7px 4px 4px 2px rgb(138, 135, 133);
-    
-    
+    box-shadow: 7px 4px 4px 2px rgb(138, 135, 133);
+
+
 }
 
 
@@ -139,9 +144,10 @@ body {
     text-decoration: none;
     color: rgb(18, 17, 18);
 }
+
 .thumbnails-item:hover {
     transform: rotate(10deg);
-    
+
 }
 
 @media (min-width: 560px) {
@@ -156,7 +162,8 @@ body {
         max-height: 80vh;
         order: -1;
         justify-content: flex-start;
-        padding-right: 5vw;             /* get some gap between list and scrollbar*/
+        padding-right: 5vw;
+        /* get some gap between list and scrollbar*/
     }
 
     .main-class {
@@ -179,9 +186,11 @@ body {
 
 @media (min-width: 900px) {
     :root {
-        --thumbnails-img-width: 14vw;       /*decrease thumbnails images for better view*/
+        --thumbnails-img-width: 14vw;
+        /*decrease thumbnails images for better view*/
         --thumbnails-img-height: 9vw
     }
+
     .logo {
         font-size: 3vw;
         font-family: bungee;
