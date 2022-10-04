@@ -30,8 +30,9 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: rgb(249, 249, 244);
-    /* background-image: url("images/LW001.jpg");  still not working */
+    background-color: rgb(169, 20, 183);
+    background-size: 100%;
+    background-image: url(../images/LW001.jpeg); 
 
 
 }
@@ -44,8 +45,6 @@ body {
     font-style: italic;
     font-family: bungee;
     letter-spacing: 3px;
-
-
 }
 
 .main-class {
@@ -75,19 +74,20 @@ body {
     border-radius: 25%;
     margin-top: 5vw;
     border: solid 1px rgb(15, 15, 14);
-    box-shadow: 7px 4px 4px 2px rgb(138, 135, 133);
+    box-shadow: 7px 4px 4px 2px rgb(29, 146, 219);
 }
 
 .details-title {
     display: block;
     font-style: oblique;
-    color: orangered;
+    color: rgb(7, 7, 7);
     font-size: 1.8em;
     font-family: lakeshor;
     text-transform: uppercase;
     margin-top: 1vw;
     position: absolute;
     bottom: 3vw;
+    -webkit-text-stroke: 1px rgb(247, 245, 245); color: rgb(13, 13, 13);
 
 
 }
@@ -113,7 +113,7 @@ body {
     border: solid 1px rgb(15, 15, 14);
     border-radius: 25%;
     overflow: hidden;
-    box-shadow: 7px 4px 4px 2px rgb(138, 135, 133);
+    box-shadow: 7px 4px 4px 2px rgb(161, 12, 175);
 
 
 }
@@ -134,6 +134,7 @@ body {
     background-color: rgb(231, 140, 4);
     font-family: airstream;
     font-size: 3vw;
+    -webkit-text-stroke: 1px rgb(247, 245, 245); color: rgb(13, 13, 13);
 
 }
 
