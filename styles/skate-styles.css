@@ -30,10 +30,8 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-image: url(images/LW001.jpg);
-    /* why this not working?*/
     background-color: rgb(249, 249, 244);
-
+    /* background-image: url("images/LW001.jpg");  still not working */
 
 
 }
@@ -83,12 +81,12 @@ body {
 .details-title {
     display: block;
     font-style: oblique;
-    font-size: 1.5em;
+    color: orangered;
+    font-size: 1.8em;
     font-family: lakeshor;
     text-transform: uppercase;
     margin-top: 1vw;
     position: absolute;
-    left: 2vw;
     bottom: 3vw;
 
 
@@ -102,8 +100,7 @@ body {
     max-height: 25vh;
     overflow-y: auto;
     justify-content: space-around;
-    padding-left: 0;
-
+    padding-left: 1vw;
     margin-right: 3vw;
 
 
@@ -136,7 +133,7 @@ body {
     height: var(--thumbnails-title-height);
     background-color: rgb(231, 140, 4);
     font-family: airstream;
-    font-size: 3.5vw;
+    font-size: 3vw;
 
 }
 
@@ -162,7 +159,7 @@ body {
         max-height: 80vh;
         order: -1;
         justify-content: flex-start;
-        padding-right: 5vw;
+        padding-right: 3vw;
         /* get some gap between list and scrollbar*/
     }
 
@@ -180,6 +177,7 @@ body {
 
     .details-container {
         justify-content: center;
+        
 
     }
 }
