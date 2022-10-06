@@ -31,8 +31,12 @@ body {
     flex-direction: column;
     margin: 0;
     background-color: rgb(169, 20, 183);
-    background-size: 100%;
-    background-image: url(../images/LW001.jpeg); 
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+
+    
+    
+   
 
 
 }
@@ -52,6 +56,7 @@ body {
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
+    
 
 }
 
@@ -60,11 +65,13 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10vh;
+    
 
 }
 
 .details-frame {
     position: relative;
+    
 
 }
 
@@ -74,7 +81,7 @@ body {
     border-radius: 25%;
     margin-top: 5vw;
     border: solid 1px rgb(15, 15, 14);
-    box-shadow: 7px 4px 4px 2px rgb(29, 146, 219);
+    box-shadow: 7px 4px 4px 2px rgb(119, 56, 244);
 }
 
 .details-title {
@@ -102,6 +109,8 @@ body {
     justify-content: space-around;
     padding-left: 1vw;
     margin-right: 3vw;
+    
+
 
 
 }
@@ -114,6 +123,7 @@ body {
     border-radius: 25%;
     overflow: hidden;
     box-shadow: 7px 4px 4px 2px rgb(161, 12, 175);
+    
 
 
 }
@@ -135,6 +145,7 @@ body {
     font-family: airstream;
     font-size: 3vw;
     -webkit-text-stroke: 1px rgb(247, 245, 245); color: rgb(13, 13, 13);
+    
 
 }
 
@@ -160,8 +171,7 @@ body {
         max-height: 80vh;
         order: -1;
         justify-content: flex-start;
-        padding-right: 3vw;
-        /* get some gap between list and scrollbar*/
+        padding-right: 3vw;             /* get some gap between list and scrollbar*/
     }
 
     .main-class {
@@ -171,13 +181,14 @@ body {
     }
 
     .details-image {
-        width: 35vw;
-        height: 30vw;
+        width: 50vw;
+        height: 45vw;
 
     }
 
     .details-container {
         justify-content: center;
+        
         
 
     }
