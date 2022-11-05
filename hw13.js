@@ -29,5 +29,3 @@ function checkTeudatZehut(teudatStrNumber) {
     })
     return sum % 10 == 0 ? console.log(true) : console.log(false);
 }
-
-checkTeudatZehut("123456782"); 
