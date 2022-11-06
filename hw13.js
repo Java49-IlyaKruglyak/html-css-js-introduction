@@ -25,7 +25,6 @@ checkTeudatZehut("123456782");
 let randomStr = "";
 let minDigit = 0;
 let maxDigit = 9;
-let char0 = '0'.charCodeAt()
 function generateRandomTeudatZehut() {
     for (let i = 0; i < 8; i++) {
 
@@ -50,8 +49,6 @@ function getRandomInt(min, max) {           // random number
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
-function num2ascii(randomAr) {
-    String.fromCharCode(char0 - 1);
-}
+
 generateRandomTeudatZehut();
 console.log(checkTeudatZehut("015105240"));
