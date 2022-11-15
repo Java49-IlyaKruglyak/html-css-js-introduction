@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/wordle.css">
 </head>
 <body>
-    <input type="text" onchange="onChange(event)">
+    <input type="text" class="textInput" onchange="onChange(event)">
     <section class="word-guess">
         <div class="letter-guess"></div>
         <div class="letter-guess"></div>
@@ -16,7 +16,10 @@
         <div class="letter-guess"></div>
         <div class="letter-guess"></div>
     </section>
-    <lable class="counter">tries remaining:</lable>
+    <lable>tries remaining:</lable>
+    <input class="counter" type="text" disabled = "true">
+    <div class="message"></div>
+    <button class="button" onclick="restart()">Start Over</button>
     <script src="src/wordle.js"></script>
 </body>
 </html>
