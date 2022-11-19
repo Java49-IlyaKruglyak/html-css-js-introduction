@@ -1,25 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/wordle.css">
+    <title>Marvels Field</title>
+    <link rel="stylesheet" href="styles/marvels-field.css">
 </head>
 <body>
-    <input type="text" class="textInput" onchange="onChange(event)">
+    <input type="text" onchange="onChange(event)">
     <section class="word-guess">
-        <div class="letter-guess"></div>
-        <div class="letter-guess"></div>
-        <div class="letter-guess"></div>
-        <div class="letter-guess"></div>
-        <div class="letter-guess"></div>
+        
     </section>
-    <lable>tries remaining:</lable>
-    <input class="counter" type="text" disabled = "true">
-    <div class="message"></div>
-    <button class="button" onclick="restart()">Start Over</button>
-    <script src="src/wordle.js"></script>
+    <p class="question-message"></p>
+    <p class="game-over-message"></p>
+    <button id="play-again" onclick="startGame()">Play Again</button>
+   <script src="src/marvels-field.js"></script> 
 </body>
 </html>

@@ -1,59 +1,78 @@
-const word = "table";
-let count = 6;
-const counterField = document.querySelector(".counter")
-counterField.value = count;
-const textInput = document.querySelector(".textInput")
-const message = document.querySelector(".message")
-const letterElements = document.querySelectorAll(".letter-guess")
-function onChange(event) {
-    const N_LETTERS = 5;
-    const wordGuess = event.target.value
-    event.target.value = '';
-    if (wordGuess.length != N_LETTERS) {
-        alert(`A word should contain ${N_LETTERS} letters`);
-    } else {
-        count--;
-        counterField.value = count;
-        const wordAr = Array.from(wordGuess);
-        wordAr.forEach((l, i) => letterElements[i].innerHTML = l)
-        const colors = wordAr.map((l, i) => {
-            let index = word.indexOf(l);
-            let res = 'red';
-            if (index > -1) {
-                res = index == i ? 'green' : 'yellow'
+const words = ["pappyhhhhh", "beachf", "apple", "reactpp", "bas",
+ "angerrrrrrr", "hell", "dress6666666"];
+ let word;
+const N_LETTERS = 5;
+const sectionElement = document.querySelector(".word-guess")
+sectionElement.innerHTML = getDivsElements();
+const letterElements = document.querySelectorAll(".letter-guess");
+const trialsElement = document.querySelector(".guess-trials");
+const gameOverElement = document.querySelector(".game-over-message");
+const playAgainElement = document.getElementById("play-again");
 
+let flGameOver = false;
+const INITIAL_TRIALS = 6;
+let trials = INITIAL_TRIALS;
+function getDivsElements() {
+    let index = Math.floor(Math.random() * words.length);
+   
+    let wordField = words[index];
+    let wordFieldAr = Array.from(wordField);
+    let res = wordFieldAr.map(letter => `<div class="letter-guess">${letter}</div>`);
+    return res.join('');
+}
+function showTrialsMessage(trials) {
+    
+        trialsElement.innerHTML = 
+        `remained ${trials} guess trials`;
+    
+   
+}
+function startGame() {
+    letterElements[2].style.background="white"
+}
+function onChange(event) {
+    const wordGuess = event.target.value;
+    
+    if (flGameOver) {
+        alert("game is over");
+        return;
+    }
+    trials--;
+    showTrialsMessage(trials);
+     
+    if (wordGuess.length != N_LETTERS) {
+        alert(`A word should contain ${N_LETTERS} letters`)
+    } else{
+        const wordAr = Array.from(wordGuess);
+        wordAr.forEach((l, i) => letterElements[i].innerHTML = l);
+        const colors = wordAr.map((letter, i) => {
+            let index = word.indexOf(letter);
+            let res = 'red';
+            if (index  > -1) {
+                res = letter == word[i] ? 'green' : 'yellow'
             }
             return res;
         })
         colors.forEach((c, i) =>
-            letterElements[i].style.color = c)
-
-        let greenLatters = 0;
-        colors.forEach(c => {
-            if (c == 'green') {
-                greenLatters++;
-            }
-        })
-        if (greenLatters == 5 && count >= 0) {
-            message.innerHTML = "Congratulations - you have guessed word";
-            message.style.color = "green";
-            textInput.disabled = true;
-        }
-        else if(count <= 0){
-            message.innerHTML = "Sorry – your guess trials have ended up";
-            message.style.color = "red";
-            textInput.disabled = true;
-
-        }
+         letterElements[i].style.color=c)
     }
-
+    const res = wordGuess == word;
+    if (trials == 0 || res) {
+        endGame(res);
+    }
+    
 }
-function restart(){
-    textInput.disabled = false;
-    count = 6;  
-    counterField.value = count;
-    letterElements.innerHTML = '';
-    message.innerHTML = "Good Luck";
-
-
-}        
+function endGame(isSuccess) {
+    if (isSuccess) {
+        gameOverElement.innerHTML =  "Congratulations you are winner";
+        gameOverElement.style.color = "green"
+    } else {
+        gameOverElement.innerHTML =  "Sorry you are loser";
+        gameOverElement.style.color = "red"
+    }
+   
+   playAgainElement.style.display='block';
+   trialsElement.innerHTML = '';
+   flGameOver = true;
+}
+startGame()
