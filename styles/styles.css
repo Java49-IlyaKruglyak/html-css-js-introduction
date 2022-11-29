@@ -1,4 +1,51 @@
 .movie-image {
-    height: 0.1em;
-    width: 1em;
+    height: 27em;
+    width: 20em;
+}
+
+.movies-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    overflow-x: auto;
+    max-height: 90vh;
+}
+
+.overview {
+    font-size: 1.5vw;
+    max-width: 40vw;
+}
+
+.original_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 3vw;
+    color: rgb(22, 1, 25);
+    flex-wrap: wrap;
+}
+
+.frame {
+    justify-content: center;
+    padding-left: 15vw;
+    max-width: 40vw;
+}
+
+.movie-item {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3vw;
+}
+
+.most-popular {
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+}
+
+.least-popular {
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
 }
