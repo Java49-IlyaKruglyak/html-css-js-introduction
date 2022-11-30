@@ -5,6 +5,8 @@ const ulElement = document.querySelector(".movies-list");
 const sectionElements = document.querySelectorAll("section");
 const getMostPopularMovie = document.querySelector(".most-popular");
 const getLeastPopularMovie = document.querySelector(".least-popular");
+const buttonElements = document.querySelectorAll("button");
+const ACTIVE_CLASS = "active";
 
 ulElement.innerHTML = getPosterImages();
 getMostPopularMovie.innerHTML = mostPopularMovie();
@@ -20,7 +22,9 @@ function getPosterImages() {
 
 function show(index) {
     sectionElements.forEach(section => section.hidden = true);
+    buttonElements.forEach(button => button.classList.remove(ACTIVE_CLASS));
     sectionElements[index].hidden = false;
+    buttonElements[index].classList.add(ACTIVE_CLASS);
 }
 
 function createElement(movie) {
@@ -52,3 +56,4 @@ function getLeastPopular() {
 function leastPopularMovie() {
     return createElement(getLeastPopular());
 }
+
