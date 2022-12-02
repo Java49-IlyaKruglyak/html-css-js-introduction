@@ -5,32 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Movies</title>
+    <title>Form</title>
+    <link rel="stylesheet" href="styles/form.css">
 </head>
 
 <body>
-    <button onclick="show(0)">Show All Movies</button>
-    <button onclick="show(1)">Show Most Popular Movie</button>
-    <button onclick="show(2)">Show Least Popular Movie</button>
-    <section hidden>
-        <ul class="movies-list">
-        </ul>
-    </section>
+    <form id="employee-form" onsubmit="onSubmit(event)" class="form-class">
+        <div class="two-inputs">
 
-    <section hidden>
-        <div class="most-popular">
+
+            <input type="text" name="employee_name" placeholder="Enter Employee Name" required>
+            <input type="email" name="email" placeholder="Enter Email" required>
+        </div>
+        <div class="date-lable">
+            <lable>Enter Birth Date</lable>
+            <input type="date" id="datePickerId" min="1950-01-01" name="birthDate" placeholder="Enter Your Birth Date" required>
+        </div>
+        <div class="two-inputs">
+            <select name="department" required>
+                <option value hidden selected disabled>
+                    --Select Department--
+                </option>
+                <option value="QA">QA</option>
+                <option value="Development">Development</option>
+                <option value="Management">Management</option>
+                <option value="Audit">Audit</option>
+
+            </select>
+            <input type="number" onchange="onChange(event)" name="salary" placeholder="Enter Salary" required>
+        </div>
+        <div class="buttons">
+            <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        </div>
+        <lable class="error"></lable>
         
-    </div>
-    </section>
-
-    <section hidden>
-        <div class="least-popular">
-       
-    </div>
-    </section>
-    
-    <script src="src/movies.js"></script>
+    </form>
+    <script src="src/form.js"></script>
 </body>
 
 </html>

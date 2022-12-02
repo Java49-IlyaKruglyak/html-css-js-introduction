@@ -1,0 +1,48 @@
+.form-class {
+    display: flex;
+    max-height: 50vh;
+}
+
+.two-inputs{
+    display: flex;
+    justify-content: space-around;
+    width: 30vw;
+    margin-top: 5vh;
+    height: 5vh;
+}
+
+.date-lable{
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    height: 10vh;
+    margin-top: 2vh;
+    
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 20vh;
+ 
+}
+input:invalid {
+    background-color: #ef8e8e;
+  }
+
+  input:valid {
+    background-color: #c2fbc2;
+  }
+  input:required {
+    border-color: #696363;
+    border-width: 2px;
+  }
+
+  .error{
+    display: flex;
+    flex-direction: row;
+    color: #d71111;
+    margin-top: 5vh;
+    font-style:oblique;
+  }
