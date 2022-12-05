@@ -12,7 +12,7 @@ const salaryErrorElement = document.getElementById("salary_error");
 
 function onSubmit(event) {
     event.preventDefault();
-    console.log("submitted");
+    console.log("Employee Added");
     const employee = Array.from(inputElements).reduce(
         (res, cur) => {
             res[cur.name] = cur.value;
@@ -21,8 +21,8 @@ function onSubmit(event) {
     )
     console.log(employee)
     company.hireEmployee(employee);
-    
 }
+
 function onChange(event) {
 
     if (event.target.name == "salary") {
@@ -74,4 +74,6 @@ Company.prototype.getAllEmployees = function(){
 }
 Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
     //TODO
+   
 }
+
