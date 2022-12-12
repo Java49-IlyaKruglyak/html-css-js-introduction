@@ -1,14 +1,18 @@
-body, html {
+body,
+html {
     height: 100%;
 }
+
 body {
     background-color: aliceblue;
 }
+
 .form-title {
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
 }
+
 .form-class {
     display: flex;
     flex-direction: column;
@@ -16,35 +20,43 @@ body {
     align-items: center;
     flex-grow: 1;
 }
+
 .two-inputs {
     display: flex;
     justify-content: space-around;
     width: 80vw;
     margin-top: 5vh;
-    
+
 }
+
 .date-label {
     margin-top: 5vh;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     height: 10vh;
     justify-content: space-around;
 }
+
 .buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    justify-content: space-between;
     margin-top: 10vh;
-    width: 40vw;
-    
+    margin-left: 30vw;
+    width: 30vw;
+
 }
+
 .error {
     border-color: red;
     color: red;
 }
+
 .active {
     background-color: blue;
     color: white;
 }
+
 .books-list {
     display: flex;
     flex-direction: row;
@@ -54,6 +66,7 @@ body {
     overflow-y: scroll;
     justify-content: space-around;
 }
+
 .books-item {
     max-width: 30vw;
     background-color: blue;
@@ -63,25 +76,41 @@ body {
     margin-top: 10vh;
     overflow: hidden;
 }
+
 .books-item-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
+
 .books-item-paragraph {
     background-color: white;
     font-weight: bold;
 }
+
 .buttons-menu {
     display: flex;
     justify-content: center;
 }
+
 .btn-menu+.btn-menu {
     margin-left: 10vw;
 }
+
 .center {
     text-align: center;
 }
+
 .form-title {
     justify-content: center;
+    margin-top: 3vh;
+    margin-right: 8vw;
+    
+}
+
+.one-input {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5vh;
+    margin-right: 8vw;
 }

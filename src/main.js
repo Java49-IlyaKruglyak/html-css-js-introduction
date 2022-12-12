@@ -1,88 +1,27 @@
 import { Library } from "./data/library.js";
-const inputElements = document.querySelectorAll(".form-class [name]");
+import { BookForm } from "./ui/bookForm.js";
+import { showErrorMessage } from "./ui/errorMessage.js";
+
+
 const authorFormInputElements = document.querySelectorAll(".author-form-class [name]");
 const MIN_PAGES = 50;
 const MAX_PAGES = 2000;
 const MIN_YEAR = 1980;
-const maxYear = getMaxYear();
-const TIME_OUT_ERROR_MESSAGE = 5000;
-const ERROR_CLASS = "error";
 const ACTIVE = "active"
 
 
 
-const dateErrorElement = document.getElementById("date_error");
-const pagesErrorElement = document.getElementById("pages_error");
+
 const pagesFormErrorElement = document.getElementById("pages_form_error");
 const booksListElement = document.getElementById("books-all");
 const booksPagesListElement = document.getElementById("books-pages");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 const booksAuthorElement = document.getElementById("books-author");
-/************************************************************************** */
-//functions of Library 
 
 
 const library = new Library();
-//functions of book Form
-function onSubmit(event) {
-    event.preventDefault();
-    console.log("submitted");
-    const book = Array.from(inputElements).reduce(
-        (res, cur) => {
-            res[cur.name] = cur.value;
-            return res;
-        }, {}
-    )
-    console.log(book)
-    library.addBook(book);
-    
-}
-function onChange(event) {
 
-    if (event.target.name == "pages") {
-        validatePages(event.target)
-    } else if (event.target.name == "publishDate") {
-        validatePublishDate(event.target);
-    }
-}
-function validatePages(element) {
-    const value = +element.value;
-    if (value < MIN_PAGES || value > MAX_PAGES) {
-        const message = value < MIN_PAGES ? `pages must be ${MIN_PAGES} or greater`
-            : `pages must be ${MAX_PAGES} or less`;
-        showErrorMessage(element, message, pagesErrorElement);
-    }
-
-}
-function validatePublishDate(element) {
-    const value = +element.value.slice(0, 4);
-    if (value < MIN_YEAR || value > maxYear) {
-        const message = value < MIN_YEAR ? `year must be ${MIN_YEAR} or greater`:
-             `year must be ${maxYear} or less`;
-        showErrorMessage(element, message, dateErrorElement) ;    
-
-    }
-
-}
-function showErrorMessage(element, message, errorElement) {
-    element.classList.add(ERROR_CLASS);
-    errorElement.innerHTML = message;
-    setTimeout(() => {
-        element.classList.remove(ERROR_CLASS);
-        element.value = ''; 
-        errorElement.innerHTML = '';
-    }, TIME_OUT_ERROR_MESSAGE);
-}
-
-function getMaxYear() {
-    return new Date().getFullYear();
-}
-/************************************************************* */
-
-/********************************************************************************** */
-
-//functions of pages Form
 
 let pagesFrom = 0;
 let pagesTo = 0;
@@ -90,7 +29,6 @@ function onSubmitPages(event) {
     event.preventDefault();
     const books = library.getBooksByPages(pagesFrom, pagesTo);
     booksPagesListElement.innerHTML = getBookItems(books);
-
 
    
 }
@@ -134,7 +72,14 @@ function getBookItems(books) {
           </li>`).join('');
 }
 
+const bookForm = new BookForm({idForm: "book_form", idDateInput: "date_input",
+     idPagesInput: "pages_input", idDateError: "date_error", idPagesError: "pages_error",
+     minYear: MIN_YEAR, minPages: MIN_PAGES, maxPages: MAX_PAGES});
+
+
+bookForm.addSubmitHandler((book) => library.addBook(book))
 // Functions of the Author form 
+
 function onSubmitAuthor(event) {
     event.preventDefault();
     const author = Array.from(authorFormInputElements)[0].value;
@@ -142,9 +87,6 @@ function onSubmitAuthor(event) {
     booksAuthorElement.innerHTML = getBookItems(books);
 }
 
-
-window.onSubmit = onSubmit;
-window.onChange = onChange;
 window.showSection = showSection;
 window.onChangePagesTo = onChangePagesTo;
 window.onChangePagesFrom = onChangePagesFrom
