@@ -30,13 +30,12 @@ function onSubmitPages(event) {
     const books = library.getBooksByPages(pagesFrom, pagesTo);
     booksPagesListElement.innerHTML = getBookItems(books);
 
-   
 }
 function onChangePagesFrom(event) {
     const value = +event.target.value;
     if (pagesTo && value >= pagesTo) {
         showErrorMessage(event.target, "Pages 'from' must be less than Pages 'to'",
-        pagesFormErrorElement);
+            pagesFormErrorElement);
     } else {
         pagesFrom = value;
     }
@@ -45,7 +44,7 @@ function onChangePagesTo(event) {
     const value = +event.target.value;
     if (pagesFrom && value < pagesFrom) {
         showErrorMessage(event.target, "Pages 'To' must be greater than pages 'From'",
-        pagesFormErrorElement);
+            pagesFormErrorElement);
     }
     pagesTo = value;
 }
@@ -60,7 +59,7 @@ function showSection(index) {
     }
 }
 function getBookItems(books) {
-    return books.map (book => 
+    return books.map(book =>
         `<li class="books-item">
               <div class="books-item-container">
                  <p class="books-item-paragraph">Name: ${book.book_name} </p>
@@ -72,9 +71,11 @@ function getBookItems(books) {
           </li>`).join('');
 }
 
-const bookForm = new BookForm({idForm: "book_form", idDateInput: "date_input",
-     idPagesInput: "pages_input", idDateError: "date_error", idPagesError: "pages_error",
-     minYear: MIN_YEAR, minPages: MIN_PAGES, maxPages: MAX_PAGES});
+const bookForm = new BookForm({
+    idForm: "book_form", idDateInput: "date_input",
+    idPagesInput: "pages_input", idDateError: "date_error", idPagesError: "pages_error",
+    minYear: MIN_YEAR, minPages: MIN_PAGES, maxPages: MAX_PAGES
+});
 
 
 bookForm.addSubmitHandler((book) => library.addBook(book))
@@ -87,7 +88,7 @@ function onSubmitAuthor(event) {
     booksAuthorElement.innerHTML = getBookItems(books);
 }
 
-window.showSection = showSection;
+ window.showSection = showSection;
 window.onChangePagesTo = onChangePagesTo;
 window.onChangePagesFrom = onChangePagesFrom
 window.onSubmitPages = onSubmitPages

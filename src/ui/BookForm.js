@@ -1,17 +1,17 @@
 import { showErrorMessage } from "./errorMessage.js";
 export class BookForm {
     #formElement;
-    #inputElements;
+    #inputElements;                 // # - private
     #dateInputElement;
     #pagesInputElement;
-    #dateErrorElement;
+    #dateErrorElement;              //декларация переменных
     #pagesErrorElement;
     #minPages;
     #maxPages;
     #minYear;
     #maxYear;
-    constructor(params){
-        this.#formElement = document.getElementById(params.idForm);
+    constructor(params){        //связующее между конструктором и 
+        this.#formElement = document.getElementById(params.idForm);             // обьявление переменных
         this.#inputElements = document.querySelectorAll(`${params.idForm} [name]`);
         this.#dateInputElement = document.getElementById(params.idDateInput);
         this.#pagesInputElement = document.getElementById(params.idPagesInput);
