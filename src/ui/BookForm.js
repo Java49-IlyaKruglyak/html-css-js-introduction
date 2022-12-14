@@ -12,19 +12,19 @@ export class BookForm {
     #maxYear;
     constructor(params){        //связующее между конструктором и 
         this.#formElement = document.getElementById(params.idForm);             // обьявление переменных
-        this.#inputElements = document.querySelectorAll(`${params.idForm} [name]`);
+        this.#inputElements = document.querySelectorAll(`#${params.idForm} [name]`);
         this.#dateInputElement = document.getElementById(params.idDateInput);
         this.#pagesInputElement = document.getElementById(params.idPagesInput);
         this.#dateErrorElement = document.getElementById(params.idDateError);
-        this.pagesErrorElement = document.getElementById(params.idPagesError);
-        this.#minPages = params.MIN_PAGES;
-        this.#maxPages = params.MAX_PAGES;
-        this.#minYear = params.MIN_YEAR;
-        this.maxYear = getMaxYear();
+        this.#pagesErrorElement = document.getElementById(params.idPagesError);
+        this.#minPages = params.minPages;
+        this.#maxPages = params.maxPages;
+        this.#minYear = params.minYear;
+        this.#maxYear = getMaxYear();
         this.onChange();
     }
     addSubmitHandler(processBookFunc){
-        this.#formElement = addEventListener("submit", (event) => {
+        this.#formElement.addEventListener("submit", (event) => {
             event.preventDefault();
         console.log("submitted");
         const book = Array.from(this.#inputElements).reduce(

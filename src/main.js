@@ -1,5 +1,5 @@
 import { Library } from "./data/library.js";
-import { BookForm } from "./ui/bookForm.js";
+import { BookForm } from "./ui/BookForm.js";
 import { showErrorMessage } from "./ui/errorMessage.js";
 
 
@@ -84,7 +84,7 @@ bookForm.addSubmitHandler((book) => library.addBook(book))
 function onSubmitAuthor(event) {
     event.preventDefault();
     const author = Array.from(authorFormInputElements)[0].value;
-    const books = library.getBooksbyAuthor(author);
+    const books = library.getBooksByAuthor(author);
     booksAuthorElement.innerHTML = getBookItems(books);
 }
 
