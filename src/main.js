@@ -1,6 +1,7 @@
 import { Library } from "./data/library.js";
 import { BookForm } from "./ui/BookForm.js";
 import { showErrorMessage } from "./ui/errorMessage.js";
+import { PagesForm } from "./ui/Pagesform.js";
 
 
 const authorFormInputElements = document.querySelectorAll(".author-form-class [name]");
@@ -23,31 +24,17 @@ const booksAuthorElement = document.getElementById("books-author");
 const library = new Library();
 
 
-let pagesFrom = 0;
-let pagesTo = 0;
-function onSubmitPages(event) {
-    event.preventDefault();
-    const books = library.getBooksByPages(pagesFrom, pagesTo);
-    booksPagesListElement.innerHTML = getBookItems(books);
 
-}
-function onChangePagesFrom(event) {
-    const value = +event.target.value;
-    if (pagesTo && value >= pagesTo) {
-        showErrorMessage(event.target, "Pages 'from' must be less than Pages 'to'",
-            pagesFormErrorElement);
-    } else {
-        pagesFrom = value;
-    }
-}
-function onChangePagesTo(event) {
-    const value = +event.target.value;
-    if (pagesFrom && value < pagesFrom) {
-        showErrorMessage(event.target, "Pages 'To' must be greater than pages 'From'",
-            pagesFormErrorElement);
-    }
-    pagesTo = value;
-}
+const paramsPages = {idForm: "pages-form", idPagesFromInput: "pagesFrom",
+         idPagesToInput: "pagesTo", idErrorMessage: "pages_form_error"}
+const pagesForm = new PagesForm(paramsPages);
+pagesForm.addSubmitHandler((pagesObj) => {
+    const books = library.getBooksByPages(pagesObj.pagesFrom, pagesObj.pagesTo);
+    booksPagesListElement.innerHTML = getBookItems(books);
+})
+
+
+
 function showSection(index) {
     buttonsMenuElement.forEach(book => book.classList.remove(ACTIVE));
     sectionsElement.forEach(book => book.hidden = true)
@@ -88,8 +75,5 @@ function onSubmitAuthor(event) {
     booksAuthorElement.innerHTML = getBookItems(books);
 }
 
- window.showSection = showSection;
-window.onChangePagesTo = onChangePagesTo;
-window.onChangePagesFrom = onChangePagesFrom
-window.onSubmitPages = onSubmitPages
+window.showSection = showSection;
 window.onSubmitAuthor = onSubmitAuthor;

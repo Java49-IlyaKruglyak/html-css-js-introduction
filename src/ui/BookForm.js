@@ -10,7 +10,8 @@ export class BookForm {
     #maxPages;
     #minYear;
     #maxYear;
-    constructor(params){        //связующее между конструктором и 
+    constructor(params){        //связующее между конструктором и пересенными с (#) те что 3стр по 12стр
+        //params это как елемент в методе map см. lecture 14.12.2022 19:05
         this.#formElement = document.getElementById(params.idForm);             // обьявление переменных
         this.#inputElements = document.querySelectorAll(`#${params.idForm} [name]`);
         this.#dateInputElement = document.getElementById(params.idDateInput);
